@@ -1,0 +1,33 @@
+@if (!toggleFilter()) {
+    <button mat-button (click)="onToggleFilter()">Help me sorting the ideas :)</button>
+} @else {
+
+    <section class="filter-container">
+    
+        <mat-form-field>
+            <mat-label>Filter by...</mat-label>
+            <mat-select [(value)]="filter.field">
+                <mat-option [value]="filterValues.TITLE">Name</mat-option>
+                <mat-option [value]="filterValues.PRICE">Price</mat-option>
+                <mat-option [value]="filterValues.RATING">Rating</mat-option>
+                <mat-option [value]="filterValues.CREATIONDATE">Creation Date</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>In mode...</mat-label>
+            <mat-select [(value)]="filter.sort">
+                <mat-option [value]="sortingValues.ASC">Ascending</mat-option>
+                <mat-option [value]="sortingValues.DESC">Descending</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="actions">
+            <button mat-raised-button (click)="onApplyFilter()">Apply filter</button>
+            <button mat-raised-button (click)="onResetFilter()">Reset filter</button>
+        </div>
+        
+    </section>
+
+
+}

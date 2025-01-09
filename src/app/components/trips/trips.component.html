@@ -1,0 +1,17 @@
+<section class="trips-container">
+
+    <trip-filter 
+        #searchFilter
+        (applyFilter)="onApplyFilter($event)" 
+    />
+
+    <trip-of-the-day />
+
+    <section class="list" (scrolled)="onScrolled()">
+        @for (trip of trips(); track trip.id) {
+            <trip-row-item [trip]="trip" />
+        }
+    </section>
+    
+
+</section>

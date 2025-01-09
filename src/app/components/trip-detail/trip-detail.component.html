@@ -1,0 +1,47 @@
+@if (loadingTripDetail()) {
+    <section>
+        Loading trip detail...
+    </section>
+} @else if (!loadingTripDetail() && tripDetail()) {
+    @let detail = tripDetail();
+
+    <section class="trip-detail-container">
+        
+        <img class="thumb" [src]="detail?.imageUrl" />
+
+        <section class="header">
+            <div class="title">
+                <div>{{ detail?.title}}</div>
+                <div>
+                    <mat-icon>{{ detail?.verticalType ?? '' | verticalTypeIcon }}</mat-icon>
+                </div>
+            </div>
+            <span class="description">{{ detail?.description}}</span>
+            <span class="tags">{{ detail?.tags ?? [] | tripTags}}</span>
+            <div class="review-description">
+                <mat-icon>rate_review</mat-icon>
+                <div class="review">{{ detail | tripReview}}</div>
+            </div>
+            <div class="economy-description">
+                <mat-icon>eco</mat-icon>
+                <div class="score">Co2 score of this trip is {{detail?.co2}}</div>
+            </div>
+            <div class="badge-description">
+                <mat-icon>support_agent</mat-icon>
+                <div class="score">Our AI evaluate this trip as <trip-badge [trip]="tripDetail() ?? undefined"/> </div>
+            </div>
+            <div class="price-description">
+                <mat-icon>shopping_bag_speed</mat-icon>
+                <div class="price">Do you want to enjoy this trip? <span class="cta">Book it now for {{ detail?.price ?? 0 | currency }}</span></div>
+            </div>
+
+
+            
+        </section>        
+        
+    </section>
+
+
+}
+
+

@@ -1,0 +1,106 @@
+.trip-detail-container {
+
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    
+    .thumb {
+        border-radius: 4%;
+        min-width: 600px;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .title {
+            font-size: 64px;
+            font-weight: 300;
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+
+            mat-icon {
+                transform: scale(2);
+            }
+        }
+
+        .description {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .tags {
+            color: lightseagreen;
+            font-weight: 400;
+        }
+
+        .review-description {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+
+            .review {
+                line-height: 24px;
+                font-weight: 300;
+                font-style: italic;
+            }
+        }
+
+        .economy-description {
+            display: flex;
+            flex-direction: row;
+            gap: 4px; 
+            
+            mat-icon {
+                color: green;
+            }
+
+            .score {
+                line-height: 24px;
+                font-weight: 300;
+                font-style: italic;
+            }
+
+        }
+
+        .badge-description {
+            display: flex;
+            flex-direction: row;
+            gap: 4px; 
+            
+            mat-icon {
+                color: pink;
+            }
+
+            .score {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                line-height: 24px;
+                font-weight: 300;
+            }
+        }
+
+        .price-description {
+            display: flex;
+            flex-direction: row;
+            gap: 4px; 
+
+            .price {
+                line-height: 24px;
+                font-weight: 300;
+                .cta {
+                    text-decoration: underline;
+                    color: blue;
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+<section class="container" [routerLink]="[trip()?.id]">
+    
+    <img class="thumb" [src]="trip()?.thumbnailUrl"/>
+
+    <section class="basic-info">
+        <div class="title">{{trip()?.title}}</div>
+        <div class="date">Created on {{trip()?.creationDate | date: 'mediumDate'}}</div>
+        
+        <div class="vertical-type-and-score-container">
+            <mat-icon>{{ trip()?.verticalType ?? '' | verticalTypeIcon }}</mat-icon>
+            <trip-badge [trip]="trip() ?? undefined"/>
+        </div>
+        
+        @if (isTripOfTheDay()) {
+            <span class="trip-of-the-day-banner">Suggested trip of the day!</span>
+        }
+
+    </section>
+    
+    <div class="rating">
+        <mat-icon>rate_review</mat-icon>
+        <div>{{trip()?.rating}}</div>
+    </div>
+
+    <div class="price">{{trip()?.price | currency}}</div>
+
+
+</section>
+

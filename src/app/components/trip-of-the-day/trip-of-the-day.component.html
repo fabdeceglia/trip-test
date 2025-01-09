@@ -1,0 +1,7 @@
+@if(!tripOfTheDay()) {
+    <button mat-button (click)="onGetTripOfTheDay()">I dunno where to go, suggest me something!</button>
+} @else {
+    <section class="trip-of-the-day-container">
+        <trip-row-item [isTripOfTheDay]="true" [trip]="tripOfTheDay()"/>
+    </section>      
+}
